@@ -32,7 +32,7 @@ class Logo extends Component {
   // };
   // keyboardHide = () => {
   //   console.log("keyboard did hide");
-  // };
+  // }
   render() {
     return (
       <View style={styles.container}>
