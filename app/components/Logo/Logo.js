@@ -16,25 +16,23 @@ import styles from "./styles";
 // );
 
 class Logo extends Component {
-  componentDidMount() {
-    this.keyboardShowListener = Keyboard.addListener(
-      "keyboardWillShow",
-      this.keyboardShow
-    );
-    this.KeyboardHideListener = Keyboard.addListener(
-      "keyboardWillHide",
-      this.keyboardHide
-    );
-  }
+  // componentDidMount() {
+  //   this.keyboardShowListener = Keyboard.addListener(
+  //     "keyboardWillShow",
+  //     this.keyboardShow
+  //   );
+  //   this.KeyboardHideListener = Keyboard.addListener(
+  //     "keyboardWillHide",
+  //     this.keyboardHide
+  //   );
+  // }
 
-  componentWillUnMount() {}
-
-  keyboardShow = () => {
-    console.log("keyboard did show");
-  };
-  keyboardHide = () => {
-    console.log("keyboard did hide");
-  };
+  // keyboardShow = () => {
+  //   console.log("keyboard did show");
+  // };
+  // keyboardHide = () => {
+  //   console.log("keyboard did hide");
+  // };
   render() {
     return (
       <View style={styles.container}>
