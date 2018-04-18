@@ -5,13 +5,20 @@ import { StatusBar } from "react-native";
 import Options from "../screens/Options";
 import Themes from "../screens/Themes";
 
+const OnlyHome = StackNavigator(
+  {
+    Home: { screen: Home, navigationOptions: { header: () => null } }
+  },
+  {
+    cardStyle: { paddingTop: StatusBar.currentHeight },
+    headerMode: "screen"
+  }
+);
+
 const HomeStack = StackNavigator(
   {
     Home: {
-      screen: Home,
-      navigationOptions: {
-        header: () => null
-      }
+      screen: OnlyHome
     },
     Options: {
       screen: Options,
@@ -28,6 +35,7 @@ const HomeStack = StackNavigator(
   },
   {
     headerMode: "screen"
+
     //navigation bar screen ile beraber gelir gidder
     //hep durmaz
   }
@@ -56,7 +64,6 @@ export default StackNavigator(
 
   {
     mode: "modal",
-    cardStyle: { paddingTop: StatusBar.currentHeight },
     headerMode: "none"
   }
 );

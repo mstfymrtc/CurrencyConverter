@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { View } from "react-native";
+import { View, StatusBar } from "react-native";
 import DropdownAlert from "react-native-dropdownalert";
 
 class AlertProvider extends Component {
@@ -25,6 +25,11 @@ class AlertProvider extends Component {
       <View style={{ flex: 1 }}>
         {React.Children.only(this.props.children)}
         <DropdownAlert
+          defaultContainer={{
+            padding: 8,
+            paddingTop: StatusBar.currentHeight,
+            flexDirection: "row"
+          }}
           ref={ref => {
             this.dropdown = ref;
           }}
