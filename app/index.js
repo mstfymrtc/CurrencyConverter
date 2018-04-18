@@ -5,6 +5,9 @@ import EStyleSheet from "react-native-extended-stylesheet";
 // import Home from './screens/Home';
 import { AlertProvider } from "./components/Alert";
 import Navigator from "./config/routes";
+import { Provider } from "react-redux";
+import store from "./config/store";
+// import "./reducers";
 EStyleSheet.build({
   $primaryBlue: "#4F6D7A",
   $primaryOrange: "#D57A66",
@@ -19,10 +22,24 @@ EStyleSheet.build({
   // $outline:1,
 });
 export default () => (
-  <AlertProvider>
-    <Navigator />
-  </AlertProvider>
+  <Provider store={store}>
+    <AlertProvider>
+      <Navigator onNavigationStateChange={null} />
+    </AlertProvider>
+  </Provider>
 );
 // export default ()=> <Options/>;
 // export default () => <Home />;
 // export default () => <CurrencyList/>;
+
+//TODO:
+/*
+1. ACTIONLARI TANIMLADIK
+2. ACTIONLARI REDUCER'A BAĞLADIK VE ACTIONLARIN NE İŞ YAPTIĞINI TANIMLADIK
+3. REDUCERI STORE'A BAĞLADIK
+4. INDEX.JS'E PROVIDER SAĞLADIK
+5. HOME.JS'E MAP FONKSIYONUNU TANIMLADIK VE BUNU HOME'A BAĞLADIK.
+6. ARTIK VERİLERE STATE.PROPS ÜZERİNDEN ERİŞEBİLİYORUZ
+7. BÖYLELİKLE BUNU UI'A BAĞLADIK.
+
+*/
