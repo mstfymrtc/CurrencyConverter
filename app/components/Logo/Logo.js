@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, ImageBackground, Image, Keyboard } from "react-native";
 import styles from "./styles";
-
+import PropTypes from "prop-types";
 // const Logo = () => (
 
 //     <View style={styles.container}>
@@ -16,6 +16,9 @@ import styles from "./styles";
 // );
 
 class Logo extends Component {
+  static propTypes = {
+    tintColor: PropTypes.string
+  };
   // componentDidMount() {
   //   this.keyboardShowListener = Keyboard.addListener(
   //     "keyboardWillShow",
@@ -33,7 +36,12 @@ class Logo extends Component {
   // keyboardHide = () => {
   //   console.log("keyboard did hide");
   // };
+
   render() {
+    const imageStyle = [
+      styles.image,
+      this.props.tintColor ? { tintColor: this.props.tintColor } : null
+    ];
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -45,7 +53,7 @@ class Logo extends Component {
           {/* yani resmi kırpmadan sığdırmayı sağlıyor  */}
           <Image
             resizeMode="contain"
-            style={styles.image}
+            style={imageStyle}
             source={require("./images/logo.png")}
           />
         </ImageBackground>
